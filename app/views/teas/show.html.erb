@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @tea.name %>
+</p>
+
+<p>
+  <strong>Origin:</strong>
+  <%= @tea.origin %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @tea.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @tea.price %>
+</p>
+<!-- Display the reviews of a tea -->
+<h2>Reviews</h2>
+<% @tea.reviews.each do |review| %>
+<p>
+<b>Review details:</b>
+<%= review.details %>
+</p>
+<% end %>
+
+<%= link_to 'Edit', edit_tea_path(@tea) %> |
+<%= link_to 'Back', teas_path %> |
+<%= link_to 'Show Reviews', tea_reviews_path(@tea) %>

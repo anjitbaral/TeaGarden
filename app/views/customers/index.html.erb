@@ -1,0 +1,40 @@
+<div class="container">
+<h1>Customers</h1>
+
+<table class ="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Bookingtime</th>
+      <th>Request</th>
+      <th>Pax</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @customers.each do |customer| %>
+      <tr>
+        <td><%= customer.name %></td>
+        <td><%= customer.email %></td>
+        <td><%= customer.phone %></td>
+        <td><%= customer.bookingtime %></td>
+        <td><%= customer.request %></td>
+        <td><%= customer.pax %></td>
+        <td><%= customer.user.username %></td>
+        <td><%= link_to 'Show', customer %></td>
+        <% if current_user && current_user.admin %>
+        <td><%= link_to 'Edit', edit_customer_path(customer) %></td>
+        <td><%= link_to 'Destroy', customer, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<button type="button" class="btn btn-dark"><%= link_to 'New Customer', new_customer_path %></button>
+</div>

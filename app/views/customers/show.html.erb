@@ -1,0 +1,37 @@
+<p>
+  <strong>Name:</strong>
+  <%= @customer.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @customer.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @customer.phone %>
+</p>
+
+<p>
+  <strong>Bookingtime:</strong>
+  <%= @customer.bookingtime %>
+</p>
+
+<p>
+  <strong>Request:</strong>
+  <%= @customer.request %>
+</p>
+
+<p>
+  <strong>Pax:</strong>
+  <%= @customer.pax %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @customer.user.username %>
+</p>
+
+<%= link_to 'Edit', edit_customer_path(@customer) %> |
+<%= link_to 'Back', customers_path %>

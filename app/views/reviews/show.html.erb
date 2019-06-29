@@ -1,0 +1,7 @@
+<h1>Review in <%= @tea.name %></h1>
+<p>
+<b>Review details:</b>
+<%= @review.details %>
+</p>
+<%= link_to 'Edit', edit_tea_review_path(@tea, @review) %> |
+<%= link_to 'Back', tea_reviews_path(@tea) %>
